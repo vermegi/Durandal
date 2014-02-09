@@ -72,6 +72,11 @@ define(['durandal/system', 'durandal/viewEngine'], function (system, viewEngine)
                 return this.locateView(obj.viewUrl, area, elementsToSearch);
             }
 
+            view = document.getElementById('applicationContent');
+            if (view) {
+                return this.locateView(view, area, elementsToSearch);
+            }
+
             var id = system.getModuleId(obj);
             if (id) {
                 return this.locateView(this.convertModuleIdToViewId(id), area, elementsToSearch);
